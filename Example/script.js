@@ -1,0 +1,11 @@
+	console.log(JSON.stringify(fSUR.serializeJSON()));
+	var c = fSUR.getChapters()[0];
+	console.log(JSON.stringify(c.serializeJSON()));
+	var q = c.getQuestions()[0];
+	console.log('CHANGING QUESTION');
+	q.setQuestionText(Math.floor(Math.random() * (10 - 2 + 1)) + 2);
+	console.log(JSON.stringify(q.serializeJSON()));
+	c.setQuestions(new Array(q));
+	console.log(JSON.stringify(c.serializeJSON()));
+	fSUR.setChapters(new Array(c));
+	console.log(JSON.stringify(fSUR.serializeJSON()));
